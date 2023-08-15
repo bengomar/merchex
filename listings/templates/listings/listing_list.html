@@ -1,0 +1,19 @@
+{% extends 'listings/base.html' %}
+
+{% block content %}
+
+<h1>Objets Groupes :</h1>
+    <ul>
+        {% for title in titles %}
+        <li>
+            <a href="{% url 'listing-detail' title.id %}"> {{ title.name }} </a>
+            - <a href="{% url 'listing-update' title.id %}">[modifier]</a>
+
+        </li>
+        {% endfor %}
+    </ul>
+
+<a href="{% url 'listing-create' %}">Créer un nouvel objet</a>
+
+
+{% endblock %}

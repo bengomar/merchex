@@ -1,0 +1,21 @@
+
+{% extends 'listings/base.html' %}
+
+{% block content %}
+<h2>{{ title.name }}</h2>
+
+<ul>
+ <li>Groupe : {{ title.band }}</li>
+ <li>Description : {{ title.description }}</li>
+ <li>Année : {{ title.year }}</li>
+ <li>Type : {{ title.get_type_display }}</li>
+</ul>
+
+<p>{{ band.biography }}</p>
+
+<a href="{% url 'listing-update' title.id %}">Modifier cet objet</a>
+<a href="{% url 'listing-delete' title.id %}">Supprimer cet objet</a>
+<a href="{% url 'listing-list' %}">Retour aux annonces</a>
+
+
+{% endblock %}
